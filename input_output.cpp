@@ -32,6 +32,7 @@ void switchChanged() {
     if (timePassed > 200) {
       //Done print 
       printf(decodeMorse(buffer));
+      buffer = '';
 
 
       
@@ -70,18 +71,18 @@ void wait(int n) {
 void dot() {
   digitalWrite(OUTPUT_PIN, HIGH);
 
-  delay(100);
+  wait(1);
   digitalWrite(OUTPUT_PIN, LOW);
-  void wait(1);
+  wait(1);
  // TO DO........Y
 }
 
 void dash() {
   digitalWrite(OUTPUT_PIN, HIGH);
 
-  delay(300);
+  wait(1);
   digitalWrite(OUTPUT_PIN, LOW);
-  void wait(1);
+  wait(1);
 
   // TO DO......Y
 
@@ -241,13 +242,13 @@ int main() {
     if (character == ' ') {
 
       // TO DO: wait 1 + 2 + 4 = 7 dots in total
-      void wait(6);
+      wait(3);
 
     }
     else {
 
       // TO DO
-      return 0;
+      sendMorse(character);
     }
   }
 }
